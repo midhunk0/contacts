@@ -5,6 +5,7 @@ import Topbar from "./components/topbar/Topbar";
 import Contacts from "./components/contacts/Contacts";
 import Create from "./components/create/Create";
 import Update from "./components/update/Update";
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
     const [users, setUsers] = useState([]);
@@ -70,6 +71,7 @@ function App() {
     };
 
     return (
+        <>
         <div className="app">
             <Topbar users={users} setFilteredUsers={setFilteredUsers} startCreateUser={startCreateUser} />
             <div className="mainDiv">
@@ -99,6 +101,8 @@ function App() {
                 </div>
             </div>
         </div>
+        <Analytics/>
+        </>
     );
 }
 
