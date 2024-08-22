@@ -1,0 +1,51 @@
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #201E43;
+}
+
+.title h2 {
+    font-size: 1.8rem;
+    color: EEEEEE;
+    font-weight: 600;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search {
+    width: 250px;
+    padding: 0.8rem 1rem;
+    font-size: 1.2rem;
+    background: #134B70;
+    border-radius: 20px;
+    outline: none;
+    color: #EEEEEE;
+    border: none;
+}
+
+.search::placeholder {
+    font-size: 1.2rem;
+    color: #EEEEEE;
+}
+
+.create {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    cursor: pointer;
+}
+
+.create img {
+    filter: invert(100%);
+}
+
+.create:hover {
+    background: transparent;
+}
