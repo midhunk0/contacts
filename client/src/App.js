@@ -12,10 +12,11 @@ function App() {
     const [selectedUser, setSelectedUser] = useState(null);
     const [isCreating, setIsCreating] = useState(false);
     const [isUpdating, setIsUpdating] = useState(false);
+    const apiUrl=process.env.REACT_APP_API_URL;
 
     const fetchUsers = async () => {
         try {
-            const response = await fetch("http://localhost:8000/get");
+            const response = await fetch(`${apiUrl}/get`);
             const data = await response.json();
             setUsers(data);
             setFilteredUsers(data); 
@@ -31,7 +32,7 @@ function App() {
                 return;
             }
     
-            const response = await fetch(`http://localhost:8000/delete/${selectedUser._id}`, {
+            const response = await fetch(`${apiUrl}/delete/${selectedUser._id}`, {
                 method: 'DELETE',
             });
     

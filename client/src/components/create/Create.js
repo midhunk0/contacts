@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 function Create({ fetchUsers, setIsCreating }) {
     const [newUser, setNewUser] = useState({ name: '', email: '', phone: '' });
+    const apiUrl=process.env.REACT_APP_API_URL;
 
     const handleChange = (e) => {
         setNewUser({ ...newUser, [e.target.name]: e.target.value });
@@ -11,7 +12,7 @@ function Create({ fetchUsers, setIsCreating }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch("http://localhost:8000/create", {
+            const response = await fetch(`${apiUrl}/create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

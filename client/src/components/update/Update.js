@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 
 function Update({ selectedUser, fetchUsers, setIsUpdating }) {
     const [updatedUser, setUpdatedUser] = useState({ name: '', email: '', phone: '' });
+    const apiUrl=process.env.REACT_APP_API_URL;
 
     useEffect(() => {
         if (selectedUser) {
@@ -17,7 +18,7 @@ function Update({ selectedUser, fetchUsers, setIsUpdating }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`http://localhost:8000/update/${selectedUser._id}`, {
+            const response = await fetch(`${apiUrl}/update/${selectedUser._id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
